@@ -1,0 +1,17 @@
+ARG LOG_STDOUT
+
+ARG LOG_STDERR
+
+ARG LOG_LEVEL
+
+FROM fauria/lamp
+
+MAINTAINER vicente.suc@myepopleapps.com
+
+WORKDIR  /var/www/html
+
+VOLUME /var/log/httpd
+
+VOLUME /etc/apache2
+
+EXPOSE 80
