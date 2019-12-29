@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  sgv:
+    build:
+      context:  .
+      dockerfile: Dockerfile
+      args:
+        LOG_STDOUT : 'true'
+        LOG_STDERR : 'true'
+        LOG_LEVEL  : 'error'
+    container_name: php-sgv
+    image: fauria/lamp:1.0
+    restart: always
+    ports:
+          - "8080:80"
+    volumes:
+        - "D:/codebase/docker-php/sgv_core/src:/var/www/html"
+        - "D:/codebase/docker-php/sgv_core/var/log/httpd:/var/log/httpd"
+          # - "./var/log/mysql:/var/log/mysql"
+          # - "./var/lib/mys:/var/lib/mysql"
+          # - "D:/codebase/docker-php/sgv_core/etc/apache2:/etc/apache2"    
